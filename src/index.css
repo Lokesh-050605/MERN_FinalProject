@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+.glossy-header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(143, 172, 216, 0.3));
+    backdrop-filter: blur(10px);  /* Apply blur effect for the glossy look */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
