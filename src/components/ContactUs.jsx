@@ -196,13 +196,21 @@ export const ContactUs=()=> {
       
       {/* Map Section */}
       <div className="mt-12 bg-white p-1 rounded-lg shadow-md">
-        <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="mx-auto text-gray-500" size={32} />
-            <p className="text-gray-600 mt-2">Map would be displayed here</p>
-          </div>
-        </div>
-      </div>
+  <div className="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
+    <div className="text-center w-full h-full">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.366634572679!2d80.1370932747882!3d12.948375387364852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525fac595c29ff%3A0xb76082ae18b51418!2sMadras%20Institute%20of%20Technology%2C%20Anna%20University!5e0!3m2!1sen!2sin!4v1745820594577!5m2!1sen!2sin" 
+        width="100%" 
+        height="100%" 
+        className="rounded-lg border-0"
+        allowFullScreen="" 
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </div>
+  </div>
+</div>
+
     </div>
   );
 }

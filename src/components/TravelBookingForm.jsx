@@ -171,8 +171,37 @@ export const TravelBookingForm = ({ initialEndDestination = '', initialDeparture
     localStorage.removeItem('travelFormData'); 
   };
 
-  // Rest of the component remains the same
-  // ...
+  if (submitted) {
+    return (
+      <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-green-600 mb-4">Booking Confirmed!</h2>
+          <p className="mb-6">Thank you for booking with us, {formData.name}. We've sent the details to {formData.email}.</p>
+          <div className="bg-gray-50 p-4 rounded-lg mb-6">
+            <h3 className="font-semibold mb-2">Trip Details:</h3>
+            {formData.isPackage && formData.packageSelection && (
+              <p><span className="font-medium">Package:</span> {availablePackages.find(pkg => pkg.id === formData.packageSelection)?.name}</p>
+            )}
+            <p><span className="font-medium">From:</span> {formData.startDestination}</p>
+            <p><span className="font-medium">To:</span> {formData.endDestination}</p>
+            <p><span className="font-medium">Departure:</span> {formData.departureDate}</p>
+            {formData.isOneWay && !formData.isPackage && (
+              <p><span className="font-medium">Trip Type:</span> One-way</p>
+            )}
+            {!formData.isOneWay && formData.returnDate && (
+              <p><span className="font-medium">Return:</span> {formData.returnDate}</p>
+            )}
+          </div>
+          <button 
+            onClick={resetForm}
+            className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
+          >
+            Book Another Trip
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">

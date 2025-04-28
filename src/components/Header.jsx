@@ -11,6 +11,7 @@ export const Header = () => {
 
   // Handle logout action
   const handleLogout = () => {
+    event.preventDefault(); // Prevent default action of the button
     localStorage.setItem("isLogin", "false");
     setIsLoggedIn(false);
     window.location.href = "/"; // Redirect to home page or any other page
